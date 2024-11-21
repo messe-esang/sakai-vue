@@ -1,3 +1,5 @@
+@use 'mixins';
+
 .layout-topbar {
     position: fixed;
     height: 4rem;
@@ -31,7 +33,7 @@
         }
 
         &:focus-visible {
-            @include focused();
+            @include mixins.focused();
         }
     }
 
@@ -52,7 +54,7 @@
         }
 
         &:focus-visible {
-            @include focused();
+            @include mixins.focused();
         }
 
         i {
@@ -87,11 +89,13 @@
     .layout-topbar-menu-content {
         display: flex;
         gap: 1rem;
+        align-items: center;
     }
 
     .layout-config-menu {
         display: flex;
         gap: 1rem;
+        align-items: center;
     }
 }
 

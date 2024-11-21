@@ -1,5 +1,6 @@
 import AppLayout from '@/layout/AppLayout.vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import { uikits } from './uikit';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -10,100 +11,55 @@ const router = createRouter({
             children: [
                 {
                     path: '/',
-                    name: 'dashboard',
-                    component: () => import('@/views/Dashboard.vue')
+                    name: '홈',
+                    component: () => import('@/views/Home.vue')
                 },
                 {
-                    path: '/uikit/formlayout',
-                    name: 'formlayout',
-                    component: () => import('@/views/uikit/FormLayout.vue')
+                    path: '/register',
+                    name: '참가신청',
+                    component: () => import('@/views/pages/Register.vue')
                 },
                 {
-                    path: '/uikit/input',
-                    name: 'input',
-                    component: () => import('@/views/uikit/InputDoc.vue')
+                    path: '/register/payment',
+                    name: '출품료납부내역',
+                    component: () => import('@/views/pages/PaymentReceipt.vue')
                 },
                 {
-                    path: '/uikit/button',
-                    name: 'button',
-                    component: () => import('@/views/uikit/ButtonDoc.vue')
+                    path: '/exhibitor/info',
+                    name: '회사명신청',
+                    component: () => import('@/views/pages/Exhibitor.vue')
                 },
                 {
-                    path: '/uikit/table',
-                    name: 'table',
-                    component: () => import('@/views/uikit/TableDoc.vue')
+                    path: '/exhibitor/staffs',
+                    name: '출입증신청',
+                    component: () => import('@/views/pages/OnSiteStaffs.vue')
                 },
                 {
-                    path: '/uikit/list',
-                    name: 'list',
-                    component: () => import('@/views/uikit/ListDoc.vue')
+                    path: '/exhibitor/manual',
+                    name: '참가기업메뉴얼',
+                    component: () => import('@/views/pages/ExhibitorManual.vue')
                 },
                 {
-                    path: '/uikit/tree',
-                    name: 'tree',
-                    component: () => import('@/views/uikit/TreeDoc.vue')
+                    path: '/promotion/invite',
+                    name: '무료초청장발송',
+                    component: () => import('@/views/pages/PromotionInvitation.vue')
                 },
                 {
-                    path: '/uikit/panel',
-                    name: 'panel',
-                    component: () => import('@/views/uikit/PanelsDoc.vue')
-                },
-
-                {
-                    path: '/uikit/overlay',
-                    name: 'overlay',
-                    component: () => import('@/views/uikit/OverlayDoc.vue')
+                    path: '/promotion/online-products',
+                    name: '온라인제품등록',
+                    component: () => import('@/views/pages/PromotionOnlineProducts.vue')
                 },
                 {
-                    path: '/uikit/media',
-                    name: 'media',
-                    component: () => import('@/views/uikit/MediaDoc.vue')
+                    path: '/notice',
+                    name: '공지사항',
+                    component: () => import('@/views/pages/Notice.vue')
                 },
                 {
-                    path: '/uikit/message',
-                    name: 'message',
-                    component: () => import('@/views/uikit/MessagesDoc.vue')
+                    path: '/fairs',
+                    name: '전시회목록',
+                    component: () => import('@/views/pages/FairList.vue')
                 },
-                {
-                    path: '/uikit/file',
-                    name: 'file',
-                    component: () => import('@/views/uikit/FileDoc.vue')
-                },
-                {
-                    path: '/uikit/menu',
-                    name: 'menu',
-                    component: () => import('@/views/uikit/MenuDoc.vue')
-                },
-                {
-                    path: '/uikit/charts',
-                    name: 'charts',
-                    component: () => import('@/views/uikit/ChartDoc.vue')
-                },
-                {
-                    path: '/uikit/misc',
-                    name: 'misc',
-                    component: () => import('@/views/uikit/MiscDoc.vue')
-                },
-                {
-                    path: '/uikit/timeline',
-                    name: 'timeline',
-                    component: () => import('@/views/uikit/TimelineDoc.vue')
-                },
-                {
-                    path: '/pages/empty',
-                    name: 'empty',
-                    component: () => import('@/views/pages/Empty.vue')
-                },
-                {
-                    path: '/pages/crud',
-                    name: 'crud',
-                    component: () => import('@/views/pages/Crud.vue')
-                },
-                {
-                    path: '/documentation',
-                    name: 'documentation',
-                    component: () => import('@/views/pages/Documentation.vue')
-                }
+                ...uikits
             ]
         },
         {

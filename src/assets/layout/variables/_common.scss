@@ -18,3 +18,13 @@
     --focus-ring-offset: var(--p-focus-ring-offset);
     --focus-ring-shadow: var(--p-focus-ring-shadow);
 }
+
+.exhibitor-avatar {
+    cursor: pointer;
+}
+
+label.required::after {
+    color: red;
+    content: '*';
+    margin-left: 0.3rem;
+}

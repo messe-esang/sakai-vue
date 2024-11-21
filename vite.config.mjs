@@ -10,6 +10,13 @@ export default defineConfig({
     optimizeDeps: {
         noDiscovery: true
     },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                silenceDeprecations: ['legacy-js-api']
+            }
+        }
+    },
     plugins: [
         vue(),
         Components({
@@ -20,5 +27,8 @@ export default defineConfig({
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
+    },
+    server: {
+        port: 9900
     }
 });

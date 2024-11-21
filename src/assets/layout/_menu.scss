@@ -1,3 +1,5 @@
+@use "mixins";
+
 .layout-sidebar {
     position: fixed;
     width: 20rem;
@@ -21,6 +23,9 @@
     list-style-type: none;
 
     .layout-root-menuitem {
+        border-bottom: 1px solid var(--surface-border);
+        padding-bottom: 0.5rem;
+
         > .layout-menuitem-root-text {
             font-size: 0.857rem;
             text-transform: uppercase;
@@ -82,15 +87,17 @@
 
             &.active-route {
                 font-weight: 700;
-                color: var(--primary-color);
+                background-color: var(--primary-color);
+                color: #fff;
             }
 
             &:hover {
                 background-color: var(--surface-hover);
+                color: var(--primary-color);
             }
 
             &:focus {
-                @include focused-inset();
+                @include mixins.focused-inset();
             }
         }
 
@@ -156,3 +163,14 @@
     overflow: hidden;
     transition: max-height 1s ease-in-out;
 }
+
+// .app-dark .layout-menu {
+//     ul {
+//         a {
+//             &.active-route {
+//                 color: #fff;
+//                 background-color: var(--primary-color);
+//             }
+//         }
+//     }
+// }
